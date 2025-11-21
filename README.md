@@ -1,60 +1,67 @@
 # 📘 Attendance Management System (Java + JDBC)
 
-A simple and modular **Attendance Management System** built using **Java**, **JDBC**, and **MySQL**.  
-This console-based application allows you to manage students, record attendance, and view attendance reports efficiently.
+A simple and modular Attendance Management System built using Java, OOP principles, JDBC, and MySQL.
+This project allows you to manage students, record attendance, and view attendance reports using a menu-driven console interface.
 
 ---
 
-## 🚀 Features
-- ➕ Add new student  
-- 📋 View all students  
-- 🗓️ Mark attendance (Present/Absent)  
-- 📅 View attendance history of each student  
-- 🧱 Layered architecture (DAO → Service → Main)  
-- 🗄️ MySQL database integration  
-- 🔧 Modular and clean code  
+## 📝 Overview
+This project demonstrates:
+- Core Java programming
+- Object-Oriented Programming concepts
+- Database connectivity using JDBC
+- CRUD operations
+- Layered architecture (DAO → Service → Main)
+- MySQL relational database schema
+
+The system supports:
+✔ Add New Student  
+✔ View All Students  
+✔ Mark Attendance (Present/Absent)  
+✔ View Attendance History for Each Student
 
 ---
 
 ## 🏗️ Project Structure
 AttendanceManagementSystem/
 │── src/
-│ ├── dao/
-│ │ ├── DBConnection.java
-│ │ ├── StudentDAO.java
-│ │ └── AttendanceDAO.java
-│ ├── model/
-│ │ ├── Student.java
-│ │ └── Attendance.java
-│ ├── service/
-│ │ └── AttendanceService.java
-│ └── Main.java
+│   ├── dao/
+│   │   ├── DBConnection.java
+│   │   ├── StudentDAO.java
+│   │   └── AttendanceDAO.java
+│   ├── model/
+│   │   ├── Student.java
+│   │   └── Attendance.java
+│   ├── service/
+│   │   └── AttendanceService.java
+│   └── Main.java
 │
 │── resources/
-│ └── db.properties
+│   └── db.properties
 │
 │── docs/
-│ └── presentation.pdf
+│   └── presentation.pdf
 │
 │── attendance.sql
 │── README.md
-└── pom.xml
+└── pom.xml (if using Maven)
 
 ---
 
 ## 🗄️ Database Schema (MySQL)
 
-### Create Database
-```sql
+Create Database:
 CREATE DATABASE attendance_db;
 USE attendance_db;
-###Students Table
+
+Students Table:
 CREATE TABLE students (
     student_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100),
     course VARCHAR(100)
 );
-###Attendance Table
+
+Attendance Table:
 CREATE TABLE attendance (
     id INT PRIMARY KEY AUTO_INCREMENT,
     student_id INT,
@@ -62,59 +69,85 @@ CREATE TABLE attendance (
     status VARCHAR(10),
     FOREIGN KEY(student_id) REFERENCES students(student_id)
 );
-###🔧 JDBC Configuration
-Add these lines in resources/db.properties:
-db.url=jdbc:mysql://localhost:3306/attendance_db
-db.username=root
-db.password=your_password
+
+---
+
+## 🔧 JDBC Configuration (db.properties)
+db.url=jdbc:mysql://localhost:3306/attendance_db  
+db.username=root  
+db.password=your_password  
 db.driver=com.mysql.cj.jdbc.Driver
-### ▶️ How to Run
-1. Clone the Repository
-git clone https://github.com/yourusername/AttendanceManagementSystem.git
+
+---
+
+## ▶️ How to Run the Project
+
+1. Clone the Repository  
+git clone https://github.com/yourusername/AttendanceManagementSystem.git  
 cd AttendanceManagementSystem
-2. Import Database
-Run the SQL file:
-mysql -u root -p attendance_db < attendance.sql
-3. Add MySQL Connector
-If using Maven:
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-j</artifactId>
-    <version>8.0.33</version>
-</dependency>
-Without Maven:
-Download MySQL Connector JAR
-Add it to project classpath
-4. Run the Program
-Using Terminal:
-javac Main.java
-java Main
-OR using IDE:
-IntelliJ / Eclipse / NetBeans
-### 📸 Sample Output
-===== Attendance Management System =====
-1. Add Student
-2. View Students
-3. Mark Attendance
-4. View Attendance
-5. Exit
+
+2. Configure the Database  
+Run SQL file:  
+mysql -u root -p attendance_db < attendance.sql  
+Update db.properties with your credentials
+
+3. Add MySQL Connector  
+If using Maven:  
+(Dependency in pom.xml)  
+mysql-connector-j version 8.0.33  
+
+If not using Maven:  
+Download JAR and add to classpath manually
+
+4. Run the Program  
+javac Main.java  
+java Main  
+(or run from IDE like IntelliJ, Eclipse, NetBeans)
+
+---
+
+## 📸 Sample Output
+===== Attendance Management System =====  
+1. Add Student  
+2. View Students  
+3. Mark Attendance  
+4. View Attendance  
+5. Exit  
 Enter choice:
-  Technologies Used
-Java
-JDBC
-MySQL
-SQL
-OOP Principles
-Maven (optional)
-###📂 Documentation
-Project presentation is available in:
+
+---
+
+## 💡 Features
+- Simple CLI-based UI  
+- Structured using OOP (Model–DAO–Service pattern)  
+- Clean and modular code  
+- Functional CRUD operations  
+- Easy to extend (GUI/Servlet version possible)
+
+---
+
+## 🛠️ Technologies Used
+- Java  
+- JDBC  
+- MySQL  
+- Maven (optional)  
+- OOP Concepts  
+- SQL
+
+---
+
+## 📂 Documentation
+Project presentation available at:  
 /docs/presentation.pdf
-###👥 Team Members
-Member 1 – Roll No
-Member 2 – Roll No
-Member 3 – Roll No
-###📄 License
+
+---
+
+## 👥 Team Members
+Member 1 – Roll No  
+Member 2 – Roll No  
+Member 3 – Roll No  
+
+---
+
+## 📄 License
 This project is for educational purposes only.
-###⭐ Contribute
-Contributions are welcome!
-Feel free to open issues or submit pull requests.
