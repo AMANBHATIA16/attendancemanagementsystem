@@ -143,9 +143,9 @@ Project presentation available at:
 ---
 
 ## 👥 Team Members
-Member 1 – Roll No  
-Member 2 – Roll No  
-Member 3 – Roll No  
+AMANDEEP SINGH BHATIA – 24scse1011218 
+YASH MISHRA – 24scse1010914 
+YASH VARDHAN SINGH RANA – 24scse1010490  
 
 ---
 
